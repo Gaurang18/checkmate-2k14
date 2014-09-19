@@ -1,0 +1,124 @@
+
+        
+
+#grad1 {
+    height: 800px;
+	/*background: -webkit-linear-gradient( #EEEEEE , #030303); /* For Safari 5.1 to 6.0 */
+   /* background: -o-linear-gradient(#EEEEEE , #030303); /* For Opera 11.1 to 12.0 */
+    /*background: -moz-linear-gradient( #EEEEEE , #030303); /* For Firefox 3.6 to 15 */
+    /*background: linear-gradient( #EEEEEE , #030303); */
+	/*background-color:#EEF3FA;*/
+	}
+@font-face {
+    font-family:f1;
+    src:url(AlegreyaSans-Bold.ttf);
+}
+@font-face {
+    font-family:f2;
+    src:url(AlegreyaSans-Thin.ttf);
+}
+@font-face {
+    font-family:f3;
+    src:url(AlegreyaSans-Medium.ttf);
+}
+@font-face {
+    font-family:f4;
+    src:url(AlegreyaSans-ExtraBold.ttf);
+}
+
+
+
+body{
+
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(147,184,150,0)), color-stop(20%,rgba(150,150,150,150)), color-stop(53%,rgba(100,100,100,38)), color-stop(79%,rgba(150,150,150,150)), color-stop(100%,rgba(150,150,150,150)));
+}
+.acm{
+    position: absolute;
+    left:20px;
+    padding-top: 2px;
+    height:20%;
+
+}
+div{
+position:absolute;
+top:100px;
+left:-330px;
+width:150%;
+background-image: 
+height:110%;
+}
+.outer{
+    opacity:0.60;
+}
+.txtbx{
+border-style:inset;
+border-width:5px;
+height:30px;
+}
+input:focus{
+background-color:#FFFFCC;
+}
+#login{
+border:1px solid #238DD0;
+border-radius:10px;
+background-color: #238DD0;
+height:40px;
+width:150px;
+color:#FFFFFF;
+font-family:f3;
+font-size:16px;
+
+}
+.one{
+color:#FFFFFF;
+font-size:38px;
+padding-left:10px;
+font-family:Snap ITC;
+}
+.div1{
+border:1px solid black;
+background-color:#333333;
+color:#B434B0;;
+width:300px;
+position:absolute;
+top:100px;
+left:618px;
+height:53px;
+}
+.div2{
+width:15px;
+border:1px solid #E00C2F;
+background-color:#E00C2F;
+height:53px;
+position:absolute;
+top:100px;
+left:602px;
+}
+.div3{
+border:1px solid #92069D;
+background-color:#92069D;
+color:#FFFFFF;
+width:214px;
+position:absolute;
+top:100px;
+left:710px;
+height:53px;
+font-size:38px;
+vertical-align:middle;
+padding-left:9px;
+padding-top:-2px;
+font-family:Snap ITC;
+}
+
+.div4{
+width:15px;
+border:1px solid #70067B;
+background-color:#70067B;
+height:53px;
+position:absolute;
+top:100px;
+left:918px;
+}
+
+/* CSS Document */
+

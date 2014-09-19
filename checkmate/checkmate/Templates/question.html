@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>Question</title>
+</head>
+<body>
+    <h1>Question</h1>
+    <p>score: {{up.score}} Level:{{up.level}} Team Name:{{u.username}} </p>
+    <p>{{q.content}} </p>
+
+    <form action="" method="post">
+        <table>
+            {{ form.as_table }}
+        </table>
+        {% csrf_token %}
+		<input type="submit" value="answer" name="Submit">
+		{%if up.level == 2 and up.flip > 0 and q.flip == False %}
+ 		<input type="submit" value="flip" name="flip">
+ 		{%endif%}
+		</form>
+ 		{%if up.level == 1 and up.score >= 200 %}
+ 		<input type="button" value="level_2" name="Go to level 2" onclick=>
+ 		{% endif %}
+
+    
+<a href="/main/">Click here to get back to main window</a>
+</body>
+</html>

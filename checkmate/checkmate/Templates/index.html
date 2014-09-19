@@ -1,0 +1,157 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>ACM | Checkmate</title>
+	<link rel="stylesheet" href="{{MEDIA_URL}}css/main.css"	 />
+	<link rel="stylesheet" href="{{MEDIA_URL}}css/importFonts.css" />
+	<script src="{{MEDIA_URL}}js/jquery.min.js"></script>
+	
+
+</head>
+<body>
+	{% if up.level == 3 %}
+	<div id="blackout" class="blackout"  style="display: block;">
+		
+		<!-- <div id="closeBox" class="closeBox" style="display: block;">CLOSE</div> -->
+		<div id="blackoutContent" class="blackoutContent"  style="display: block;">
+			<div id="blackoutContentWrapper" class="blackoutContentWrapper">
+					<h2 class="h2MP">MARKET PLACE</h2><br/><br/><br/>
+						<b>HOW MANY YOU WANT TO BUY:<b/><br/><br/>
+				    <div id="doubledipMP" class="doubledipMP">
+						<br/>DoubleDips<input type="text" name="dd" id="doubledip"/><br/><br/><br/>
+					</div>
+					<div id="flipMP" class="flipMP">
+						<br/>Flips<input type="text" name="flip" id="flip"/><br/><br/><br/><br/>
+					</div>
+					<button type="submit" class="marketSubmit" id="marketSubmit">Submit</button>
+					<p class="powerCost">
+						<br/><br/><br/>
+						cost of 1 Doubledip:20<br/>
+						cost of 1 flip:20<br/>
+						Enter Text
+					</p>
+			</div>
+		</div>
+	</div>
+	{% else %}
+	<div id="blackout" class="blackout">
+		
+		<!-- <div id="closeBox" class="closeBox" style="display: block;">CLOSE</div> -->
+		<div id="blackoutContent" class="blackoutContent">
+			<div id="blackoutContentWrapper" class="blackoutContentWrapper">
+					<h2 class="h2MP">MARKET PLACE</h2><br/><br/><br/>
+					<b>HOW MANY YOU WANT TO BUY:</b><br/><br/>
+                    <div id="doubledipMP" class="doubledipMP">
+						<br/>DoubleDips<input type="text" name="dd" id="doubledip"/><br/><br/><br/>
+					</div>
+					<div id="flipMP" class="flipMP">
+						<br/>Flips<input type="text" name="flip" id="flip"/><br/><br/><br/><br/>
+					</div>
+					<button type="submit" class="marketSubmit" id="marketSubmit">Submit</button>
+				    <p class="powerCost">
+						<br/><br/><br/>
+						cost of 1 Doubledip:20<br/>
+						cost of 1 flip:20 <br/>
+						Enter Text
+					</p>
+			</div>
+		</div>
+	</div>
+	{% endif %}
+	<div id="topBar" class="topBar">
+		<div id="head" class="head">Check<span style="font-weight:100;">mate</span></div>
+		
+		<div id="topContainer1" class="topContainer1">{{up.score}}</div>
+		<div id="topContainer2" class="topContainer2">
+			<div id="userName" class="userName" ><span class="ln">Team : </span><br><span class="fn">{{u.username}}</span><br></div>
+		</div>
+	</div>
+	
+    <div id="buttons" class="rightBox buttons">
+    	<button id="rulebkbtn" onclick="rulebook();">Rulebook</button>
+    	<button id="logoutbtn" onclick="logout();">Logout</button>
+    	<script type="text/javascript">
+    		function logout() {
+    			// body...
+    			window.location.href = '/logout/';
+    		}
+    		function rulebook() {
+    			var win=window.open('/media/checkmate_rulebook.pdf', '_blank');
+  				win.focus();
+    		}
+    	</script>
+    </div>
+
+
+	<div id="shop" class="rightBox shop" >
+	<div id="shopHeader" class="header shopHeader"><img class="rightIcon" src="{{MEDIA_URL}}img/c2.png">MY CART</div>
+		{% if up.level == 1 and up.score < 200 %}
+		<div id="levelup">
+			<button id="levelbtn" class="oldlevelbtn" disabled >LevelUp</button>
+		</div>
+		{% elif up.level == 1 %}
+		<div id="levelup">
+			<button id="levelbtn" class="newlevelbtn"  >LevelUp</button>
+		</div>
+		{% endif %}
+		{% if up.level == 2 %}
+		<div id="flipWrapper" class="powerWrapper flipWrapper">
+			<b>FLIP</b>
+			<div id="numflip" class="numMultipler">Available:{{up.flip}}</div>
+			<button id="useflip" class="shopButton useflip">USE</button>
+			<button id="buyflip" class="shopButton buyflip">BUY</button>
+		</div>
+		<div id="doubleDipWrapper" class="powerWrapper doubleDipWrapper">
+			<b>DOUBLE DIP</b>
+			<div id="numDoubleDip" class="numDoubleDip">Available:{{up.dd}}</div>
+			<button id="useDoubleDip" class="shopButton useDoubleDip">USE</button>
+			<button id="buyDoubleDip" class="shopButton buyDoubleDip">BUY</button>
+		</div>
+		{% endif %}
+	</div>
+
+	<div id="questions" class="rightBox questions">
+		<div id="questionsHeader" class="header questionsHeader"><img class="rightIcon" src="{{MEDIA_URL}}img/q1.png">QUESTIONS</div>
+		<div id="questionsList" class="questionsList">
+			{%for q in qset%}
+			<button id="ques{{q.no}}" class="qButton">Q {{q.no}}</button>
+			<input type="hidden" class="ddip" />
+			{%endfor%}
+			{%for q in eqset%}
+			<button id="ques{{q.no}}" class="qButton nonClickableQuestion" >Q {{q.no}}</button>
+			<input type="hidden" class="ddip" />
+			{%endfor%}
+
+		</div>
+		
+	</div>
+
+	<div id="IOWrapper" class="IOWrapper">
+		<div id="IOHeader" class="IOHeader">
+			<div id="levelBox" class="levelBox">LEVEL {{up.level}}</div>
+			<div id="numQuestion" class="numQuestion"></div>
+			<div id="flipCheck" class="flipCheck"></div>
+			<div id="doubleDipCheck" class="doubleDipCheck"></div>
+		</div>
+		<div id="IOContent" class="IOContent">
+			WELCOME TO ACM CHECKMATE 14<br/>
+			
+		</div>
+		<div id="IOAnswerWrapper" class="IOAnswerWrapper">
+			<div class="answerStrip">
+			
+				Submit an answer 
+				<div id="answerCover" class="answerCover">
+					<input type="text" class="answerBox" id="answerBox" placeholder="Your answer here">
+					<button type="submit" class="answerSubmit" id="answerSubmit" >Submit</button>
+				</div>
+			
+			</div>
+		</div>
+	</div>
+	<script src="{{MEDIA_URL}}js/main.js"></script>
+	
+</body>
+</html>

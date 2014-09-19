@@ -1,0 +1,23 @@
+@font-face {
+  font-family: ASans;
+  src: url('./AlegreyaSans-ExtraBold.ttf');
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: ASans;
+  src: url('./AlegreyaSans-Bold.ttf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: ASans;
+  src: url('./AlegreyaSans-Medium.ttf');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: ASans;
+  src: url('./AlegreyaSans-Thin.ttf');
+  font-weight: 100;
+}

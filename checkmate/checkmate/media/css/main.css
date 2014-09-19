@@ -1,0 +1,483 @@
+/* if u change the css, which u will, dont do anything to the `NEEDED` css - that will remain as-it-is */
+
+/* universal */
+*
+{
+	cursor: default;
+	font-family: "ASans";
+	margin: 0;
+	overflow: hidden;
+}
+
+body,html {height: 100%;background-color: #f1f1f1; }
+
+/* Blackout */
+.mask{
+	height: 100%;
+	width:100%;
+	background-color:rgba(0,0,0,0);
+	opacity:0.5;
+	z-index: 999;
+	position:fixed;
+}
+
+.blackout {
+	display:none;
+	position:fixed;
+	background-color: rgba(0,0,0,0.90);
+	width:100%;
+	height:100%;
+	z-index:999;
+}
+.closeBox {
+	position:fixed;
+	color:white;
+	right:0px;
+	padding:20px;
+	font-size:15px;
+	cursor: pointer;
+	z-index:5;
+}
+
+.blackoutContent {
+	width:100%;
+	height:100%;
+	position:fixed;
+	z-index:4;
+	display:none;
+}
+
+.blackoutContentWrapper {
+	background-color: #f1f1f1;
+	border-radius: 5px;
+	overflow-y:hidden;
+	overflow-x: hidden;
+	margin-top:5%;
+	z-index:4;
+	width:500px;
+	margin-left: calc(50% - 250px);
+	height:550px;
+	margin-top:5%;
+	box-shadow: 0px 0px 0px 5px #cf4635;
+}
+
+.h2MP{
+	font-style: bold;
+	margin:5px 170px;
+	color:#000000;
+}
+.doubledipMP{
+	text-align: center;
+	padding:2px;
+	width: 138px;
+	margin: 10px 40px;
+	border: 1px solid #bbb;
+	float:left;
+	height: 100px;
+	border-radius: 10px;
+}
+
+.flipMP{
+	text-align: center;
+	padding:2px;
+	width: 138px;
+	margin: 10px 60px;
+	border: 1px solid #bbb;
+	float:right;
+	height: 100px;
+	border-radius: 10px;
+}
+
+#doubledip{
+
+	border:1px solid black;
+	margin:20px 2px;
+	text-align: center;
+	float:left;
+
+}
+#flip{
+	border:1px solid black;
+	margin:20px 2px;
+	text-align: center;
+	float:right;
+	}
+
+.marketSubmit {
+    border:0px solid black;
+    margin: 5px 180px;
+    font-size: 18px;
+    border-radius: 3px;
+    height: 28px;
+    width: 100px;
+    background: #000000;
+    color:white;
+}
+
+.powerCost{
+	text-align: center;
+	padding: 2px;
+	font-size: 18px;
+
+}
+
+/* Blackout Styling Ends */
+
+
+/* topbar */
+.topBar {
+	top: 0px;
+	position: fixed;
+	width:100%;
+	z-index: 1;
+	height: 60px;
+	background: #333;
+	box-shadow:  0px -1px 20px 0px #000;
+}
+.head {
+	font-size:40px;
+	font-weight: 900;
+	text-align: justify;
+	height:60px;
+	line-height: 60px;
+	padding-left:10px;
+	padding-right: 30px;
+	float:left;
+	color:white;
+	border-left: 5px solid #70067b;
+	border-right: 20px solid #70067b;
+	background: #92069d;
+	text-shadow: 1px 1px 1px black;
+}
+.topContainer1 {
+	height:100%;
+	border-left: 25px solid #e00c2f;
+	border-right: 10px solid #e00c2f;
+	background: #ff2a4d;
+	vertical-align: central;
+	padding: 0% 20px 0% 10px;
+	width: 90px;
+	float:right;
+	color:white;
+	line-height: 50px;
+	font-weight: 900;
+	font-size: 60px;
+	text-align: center;
+}
+.topContainer2 {
+	height:60px;
+	vertical-align: central;
+	padding: 0px 5px;
+	float:right;
+	width: 180px;
+	background-color: #444;
+	border-left: 25px solid #555;
+	border-right: 10px solid #555;
+
+}
+.userName{
+	color: white;
+	padding:5px 0px 4px 5px;
+	float:left;
+}
+.fn {
+	font-size: 30px;
+	font-weight: 900;
+	line-height: 30px;
+}
+.ln {
+	font-size: 14px;
+	font-weight: 300;    
+}
+
+/* topbar styling ends */
+
+/* right elements*/
+
+.rightBox {
+	position: fixed;
+	right: 20px;
+	width: 320px;
+	border-radius: 5px;
+	background-color: #e3e3e3;
+	overflow: hidden;
+}
+
+.buttons{
+   top:80px;
+   height:30px;
+   background: #f1f1f1;
+
+}
+#rulebkbtn{
+	border:0.5px solid black;
+    margin: 3px;
+    font-size: 16px;
+    border-radius: 3px;
+    height: 30px;
+    width: 140px;
+    float: left;
+    background: #e54444;
+    color:white;
+
+}
+#logoutbtn{
+	border:0.5px solid black;
+    margin: 3px;
+    font-size: 16px;
+    border-radius: 3px;
+    height: 30px;
+    width: 140px;
+    float: right;
+    background: #e54444;
+    color:white;
+
+}
+.shop {
+	top: 120px;
+	height: 170px;
+}
+
+.questions {
+	top: 300px;
+	height: calc(100% - 280px);
+}
+
+.header {
+	font-weight: 700;
+	width: calc(100%);
+	line-height: 40px;
+	height: 40px;
+}
+
+.shopHeader {
+	background-color: #a9e339;
+	border-bottom: 5px solid #8bcc0e;
+}
+.oldlevelbtn{
+	border:1px solid black;
+    font-size: 24px;
+    border-radius: 6px;
+    height: 60px;
+    width: 200px;
+    background: #6e7a75;
+    color:white;
+    margin: 30px -100px; 
+    position:relative;
+    top:50%; 
+    left:50%;
+}
+.newlevelbtn{
+	border:1px solid black;
+    font-size: 24px;
+    border-radius: 6px;
+    height: 60px;
+    width: 200px;
+    background: rgb(55,123,205);
+    color:white;
+    margin: 30px -100px; 
+    position:relative;
+    top:50%; 
+    left:50%;
+}
+
+
+.flipWrapper{
+	padding-top: 2px;
+	text-align: center;
+	color:#000080;
+}
+.doubleDipWrapper{
+	padding-top: 2px;
+	text-align: center;
+	color:#000080;
+
+}
+.useflip{
+	 border:0.5px solid black;
+    margin: 2px;
+    font-size: 12px;
+    border-radius: 3px;
+    height: 20px;
+    width: 60px;
+    float: right;
+    background: #238dd0;
+    color:white;
+    float:left;
+}
+.buyflip{
+	 border:0.5px solid black;
+    margin: 2px;
+    font-size: 12px;
+    border-radius: 3px;
+    height: 20px;
+    width: 60px;
+    float: right;
+    background: #238dd0;
+    color:white;
+    float: right;
+}
+.useDoubleDip{
+	 border:0.5px solid black;
+    margin: 2px;
+    font-size: 12px;
+    border-radius: 3px;
+    height: 20px;
+    width: 60px;
+    float: right;
+    background: #238dd0;
+    color:white;
+    float:left;
+}
+.buyDoubleDip{
+	 border:0.5px solid black;
+    margin: 2px;
+    font-size: 12px;
+    border-radius: 3px;
+    height: 20px;
+    width: 60px;
+    float: right;
+    background: #238dd0;
+    color:white;
+    float: right;
+}
+
+.questionsHeader {
+	background-color: #fbab20;
+	border-bottom: 5px solid #db9419;
+}
+
+.rightIcon {
+	height: 20px;
+	margin-bottom: 	-5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.powerWrapper {
+	width: 138px;
+	margin: 10px 10px;
+	float: left;
+	border: 1px solid #bbb;
+	height: 100px;
+	border-radius: 10px;
+}
+
+.questionsList {
+	width: 320px;
+	height: 110px;
+	//border: 1px solid black;
+	margin: 2px;
+	height: calc(100% - 60px);
+	overflow-y: scroll;
+}
+
+.qButton {
+	width: 50px;
+	margin: 5px;
+	height: 40px;
+	border: 1px solid white;
+}
+.hide{
+	display: none;
+}
+
+/* right elements styling end */
+
+/* IOWrwpper */
+
+.IOWrapper {
+	top: 80px;
+	left: 10px;
+	position: fixed;
+	width: calc(100% - 370px);
+	height: calc(100% - 90px);
+	border-radius: 5px;
+	border: 1px solid #ddd;
+}
+
+.IOHeader{
+	margin: 10px 0%;
+	height: 40px;
+	padding-left: 10px;
+	border-bottom: 1px solid #ddd;
+}
+
+.levelBox {
+	float: left;
+	font-weight: 900;
+	width: 100px;
+	border-radius: 5px;
+	font-size: 24px;
+	text-align: center;
+	margin: 2px;
+	background-color: #e54444;
+	color: white;
+}
+
+.numQuestion {
+	float: left;
+	width: 300px;
+	border-radius: 5px;
+	font-size: 24px;
+	margin: 2px;
+	margin-left: 10px;
+}
+
+.IOContent {
+	font-weight: 300;
+	padding: 20px;
+	font-size: 18px;
+	text-align: justify;
+}
+
+.IOAnswerWrapper {
+    position:absolute;
+    bottom:0px;
+    height:60px;
+    width: 100%;
+    background: #ddd;
+    border-top:1px solid #ccc;
+    font-weight: 900;
+    font-size: 25px;
+    line-height: 60px;
+}
+.answerStrip {
+	width: 580px;
+	margin: auto;
+}
+.answerCover {
+    border: 1px solid #bbb;
+    margin: 13px 2.5px;
+    height: 34px;
+    width: 380px;
+    float:right;
+    background: #fff;
+    border-radius: 5px;
+}
+.answerBox {
+	float: left;
+    width:250px;
+    height:30px;
+    margin: 2px 0px;
+    border: 0px;
+    padding-left: 5px;
+    font-size: 25px;
+    outline:none;
+}
+.answerSubmit {
+    border:0px solid black;
+    margin: 3px;
+    font-size: 18px;
+    border-radius: 3px;
+    height: 28px;
+    width: 100px;
+    float: right;
+    background: #238dd0;
+    color:white;
+}
+.nonClickableQuestion{
+	background-color: #333; 
+}
+
+/* IOWrapper Styling end */
